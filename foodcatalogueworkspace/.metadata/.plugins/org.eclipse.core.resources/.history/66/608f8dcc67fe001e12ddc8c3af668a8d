@@ -1,0 +1,5 @@
+package com.puneet.foodcatalogue.controller;
+
+public class FoodCatalogueController {
+
+}

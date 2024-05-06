@@ -1,0 +1,7 @@
+package com.puneet.order.controller;
+
+@RestController
+@RequestMapping("orderapi")
+public class OrderController {
+
+}

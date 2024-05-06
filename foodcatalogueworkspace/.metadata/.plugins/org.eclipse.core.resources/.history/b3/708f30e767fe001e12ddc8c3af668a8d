@@ -1,0 +1,10 @@
+package com.puneet.foodcatalogue.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FoodCatalogueController {
+
+	@Autowired
+	FoodCatalogueService foodCatalogueService;
+}

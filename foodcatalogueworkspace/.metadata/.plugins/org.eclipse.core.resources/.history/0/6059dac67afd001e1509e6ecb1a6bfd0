@@ -1,0 +1,5 @@
+package com.puneet.foodcatalogue.dto;
+
+public class FoodItemDTO {
+
+}

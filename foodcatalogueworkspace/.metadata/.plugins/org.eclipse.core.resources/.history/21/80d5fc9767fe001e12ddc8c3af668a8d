@@ -1,0 +1,8 @@
+package com.puneet.foodcatalogue.service;
+
+@Service
+public class FoodItemService {
+
+	@Autowired
+	IFoodItemDAO foodItemDAO;
+}

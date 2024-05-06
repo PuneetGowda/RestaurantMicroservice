@@ -1,0 +1,5 @@
+package com.puneet.restaurant.controller;
+
+public class RestaurantControllerTest {
+
+}

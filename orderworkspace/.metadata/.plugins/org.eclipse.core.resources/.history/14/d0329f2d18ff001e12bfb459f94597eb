@@ -1,0 +1,9 @@
+package com.puneet.order.dto;
+
+public class OrderDTO {
+
+	private int OrderId;
+	private List<FoodItemDTO> foodItemList;
+	private Integer userId;
+	private RestaurantDTO restaurant;
+}

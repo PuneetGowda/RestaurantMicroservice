@@ -1,0 +1,14 @@
+package com.puneet.order.dto;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserDTO {
+
+	private int userId;	
+	private String userName;
+	private String userPassword;
+	private String userPhone;
+	private String userCity;
+	private String userAddress;
+}

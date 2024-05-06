@@ -1,0 +1,11 @@
+package com.puneet.order.dto;
+
+public class FoodItemDTO {
+	private int itemId;	
+	private String itemName;	
+	private String itemDescription;	
+	private boolean isVeg;	
+	private Number itemPrice;
+	private Integer restaurantId;	
+	private Integer itemQuantity;
+}

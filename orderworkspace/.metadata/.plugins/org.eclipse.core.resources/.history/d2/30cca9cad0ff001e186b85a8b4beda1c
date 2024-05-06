@@ -1,0 +1,29 @@
+package com.puneet.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.puneet.order.dao.IOrderDAO;
+import com.puneet.order.dto.OrderDTO;
+import com.puneet.order.dto.OrderViewDTO;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	IOrderDAO orderDAO;
+	
+	@Autowired
+	SequenceGenerator sequenceGenerator;
+
+	public OrderDTO saveOrder(OrderViewDTO orderDetails) {
+		
+		Integer newOrderId = sequenceGenerator.generateNextOrderId();
+		
+		
+		
+		Order savedOrder = new Order()
+		
+		return null;
+	}
+}

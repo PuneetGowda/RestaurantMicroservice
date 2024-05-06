@@ -1,0 +1,8 @@
+package com.puneet.order.dto;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class RestaurantDTO {
+
+}

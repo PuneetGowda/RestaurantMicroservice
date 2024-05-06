@@ -1,0 +1,40 @@
+package com.puneet.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.puneet.order.dao.IOrderDAO;
+import com.puneet.order.dto.OrderDTO;
+import com.puneet.order.dto.OrderViewDTO;
+import com.puneet.order.dto.UserDTO;
+import com.puneet.order.entity.Order;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	IOrderDAO orderDAO;
+	
+	@Autowired
+	SequenceGenerator sequenceGenerator;
+	
+	@Autowired
+	RestTemplate restTemplate;
+
+	public OrderDTO saveOrder(OrderViewDTO orderDetails) {
+		
+		Integer newOrderId = sequenceGenerator.generateNextOrderId();
+		
+		UserDTO userDTO = fetchUserDetailsFromUserId(orderDetails.getUserId());
+		
+		Order savedOrder = orderDAO.save(new Order(newOrderId, orderDetails.getFoodItemList(), orderDetails.getRestaurant(), userDTO));
+		
+		
+		return null;
+	}
+
+	private UserDTO fetchUserDetailsFromUserId(Integer userId) {
+		return restTemplate.getForObject("http://USER-SERVICE/userapi/v1/users/"+userId, UserDTO.class);
+	}
+}

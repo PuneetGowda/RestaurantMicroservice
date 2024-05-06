@@ -1,0 +1,14 @@
+package com.puneet.order.entity;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Document(collection = "sequence")
+@Data
+@AllAgrsConstructor
+@NoArgsConstructor
+public class Sequence {
+
+}

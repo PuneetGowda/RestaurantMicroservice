@@ -1,0 +1,8 @@
+package com.puneet.order.service;
+
+@Service
+public class SequenceGenerator {
+
+	@Autowired
+	private MongoOperations mongoOperations;
+}

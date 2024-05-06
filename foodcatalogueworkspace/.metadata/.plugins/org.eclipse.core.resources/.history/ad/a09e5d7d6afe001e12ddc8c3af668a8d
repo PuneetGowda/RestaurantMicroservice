@@ -1,0 +1,19 @@
+package com.puneet.foodcatalogue.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.puneet.foodcatalogue.dao.IFoodItemDAO;
+import com.puneet.foodcatalogue.dto.FoodItemDTO;
+
+@Service
+public class FoodCatalogueService {
+
+	@Autowired
+	IFoodItemDAO foodItemDAO;
+
+	public FoodItemDTO addFoodItem(FoodItemDTO foodItemDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

@@ -1,0 +1,7 @@
+package com.puneet.foodcatalogue.dto;
+
+@Data
+@AllArgsConstructor
+public class FoodItemDTO {
+
+}

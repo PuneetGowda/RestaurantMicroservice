@@ -1,0 +1,5 @@
+package com.puneet.order.dao;
+
+public interface IOrderDAO extends MongoRepository {
+
+}

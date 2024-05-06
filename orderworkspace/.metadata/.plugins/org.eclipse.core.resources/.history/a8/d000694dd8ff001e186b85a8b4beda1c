@@ -1,0 +1,11 @@
+package com.puneet.order.utilities;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class OrderMapper {
+
+	public OrderDTO mapOrderToOrderDTO(Order order) {
+		return new UserDTO(user.getu)
+	}
+}

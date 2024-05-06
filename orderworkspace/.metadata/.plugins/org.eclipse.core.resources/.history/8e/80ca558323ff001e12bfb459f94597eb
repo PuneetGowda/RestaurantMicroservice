@@ -1,0 +1,20 @@
+package com.puneet.order.entity;
+
+import java.util.List;
+
+import com.puneet.order.dto.FoodItemDTO;
+import com.puneet.order.dto.RestaurantDTO;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+public class Order {
+
+	private int OrderId;
+	private List<FoodItemDTO> foodItemList;
+	private Integer userId;
+	private RestaurantDTO restaurant;
+}

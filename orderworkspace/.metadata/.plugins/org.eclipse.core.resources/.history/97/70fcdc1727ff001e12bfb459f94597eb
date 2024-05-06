@@ -1,0 +1,8 @@
+package com.puneet.order.dao;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+@Repository
+public interface IOrderDAO extends MongoRepository<Order, Integer> {
+
+}

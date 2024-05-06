@@ -1,0 +1,32 @@
+package com.puneet.foodcatalogue.dto;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GenerationType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class FoodItemDTO {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="item_id")
+	private int itemId;
+	
+	private String itemName;
+	
+	private String itemDescription;
+	
+	private boolean isVeg;
+	
+	private Number itemPrice;
+	
+	private Integer restaurantId;
+	
+	@Column(name = "item_quantity", nullable = false, columnDefinition = "INT DEFAULT 0")
+	private Integer itemQuantity;
+	
+}

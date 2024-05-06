@@ -1,0 +1,5 @@
+package com.puneet.foodcatalogue.utilities;
+
+public class FoodItemMapper {
+
+}

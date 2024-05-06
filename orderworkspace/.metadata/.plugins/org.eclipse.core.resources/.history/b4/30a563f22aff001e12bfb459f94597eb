@@ -1,0 +1,9 @@
+package com.puneet.order.entity;
+
+@Document(collection = "sequence")
+@Data
+@AllAgrsConstructor
+@NoArgsConstructor
+public class Sequence {
+
+}

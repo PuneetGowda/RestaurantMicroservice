@@ -1,0 +1,14 @@
+package com.puneet.order.dto;
+
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class OrderDTO {
+
+	private Integer orderId;
+	private List<FoodItemDTO> foodItemList;
+	private UserDTO userDTO;
+	private RestaurantDTO restaurant;
+}

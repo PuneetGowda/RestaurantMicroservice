@@ -1,0 +1,5 @@
+package com.puneet.foodcatalogue.service;
+
+public class FoodItemService {
+
+}

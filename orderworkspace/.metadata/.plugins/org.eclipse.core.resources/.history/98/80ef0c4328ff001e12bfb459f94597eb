@@ -1,0 +1,13 @@
+package com.puneet.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.puneet.order.dao.IOrderDAO;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	IOrderDAO orderDAO;
+}

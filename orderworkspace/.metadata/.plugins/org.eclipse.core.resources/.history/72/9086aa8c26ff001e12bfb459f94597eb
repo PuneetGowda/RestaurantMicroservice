@@ -1,0 +1,6 @@
+package com.puneet.order.service;
+
+@Service
+public class OrderService {
+
+}

@@ -1,0 +1,48 @@
+package com.puneet.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.puneet.order.dao.IOrderDAO;
+import com.puneet.order.dto.OrderDTO;
+import com.puneet.order.dto.OrderViewDTO;
+import com.puneet.order.dto.UserDTO;
+import com.puneet.order.entity.Order;
+import com.puneet.order.utilities.OrderMapper;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	IOrderDAO orderDAO;
+	
+	@Autowired
+	SequenceGenerator sequenceGenerator;
+	
+	@Autowired
+	RestTemplate restTemplate;
+
+	@Autowired
+	OrderMapper orderMapper;
+	
+	public OrderDTO saveOrder(OrderViewDTO orderDetails) {
+		
+		int newOrderId = sequenceGenerator.generateNextOrderId();
+		
+		UserDTO userDTO = fetchUserDetailsFromUserId(orderDetails.getUserId());
+		
+		Order savedOrder = orderDAO.save(new Order(newOrderId, orderDetails.getFoodItemList(), orderDetails.getRestaurant(), userDTO));
+		
+		return orderMapper.mapOrderToOrderDTO(savedOrder);
+	}
+
+	private UserDTO fetchUserDetailsFromUserId(Integer userId) {
+		return restTemplate.getForObject("http://USER-SERVICE/usersapi/v1/users/"+userId, UserDTO.class);
+	}
+
+	public List<OrderDTO> fetchAllOrders() {
+		return orderMapper.mapOrderToOrderDTO(orderDAO.findAll());
+		
+	}
+}

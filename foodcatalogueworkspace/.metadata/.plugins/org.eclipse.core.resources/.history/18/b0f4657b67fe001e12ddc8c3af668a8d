@@ -1,0 +1,10 @@
+package com.puneet.foodcatalogue.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.puneet.foodcatalogue.entity.FoodItem;
+
+@Repository
+public interface IFoodItemDAO extends JpaRepository<FoodItem, Integer> {
+
+}

@@ -1,0 +1,19 @@
+package com.puneet.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.stereotype.Service;
+
+import com.puneet.order.entity.Sequence;
+
+@Service
+public class SequenceGenerator {
+
+	@Autowired
+	private MongoOperations mongoOperations;
+	
+	public int generateNextOrderId() {
+		Sequence counter = mongoOperations.findAndModify(query(where("_id").is("sequence")), new Update().inc("sequence", 1), options().returnNew(true).upser(true), Sequence.class);
+		return counter.getSequence();
+	}
+}
